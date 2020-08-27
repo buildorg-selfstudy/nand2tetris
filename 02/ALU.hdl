@@ -42,5 +42,29 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-   // Put you code here:
+    // Put you code here:
+    Mux16(a=x, b[0..15]=false, sel=zx, out=xAfterZx);
+    Not16(in=xAfterZx, out=notXAfterZx);
+    Mux16(a=xAfterZx, b=notXAfterZx, sel=nx, out=xAfterNx);
+    
+    Mux16(a=y, b[0..15]=false, sel=zy, out=yAfterZy);
+    Not16(in=yAfterZy, out=notYAfterZy);
+    Mux16(a=yAfterZy, b=notYAfterZy, sel=ny, out=yAfterNy);
+
+    Add16(a=xAfterNx, b=yAfterNy, out=afterAdd);
+    And16(a=xAfterNx, b=yAfterNy, out=afterAnd);
+    Mux16(a=afterAnd, b=afterAdd, sel=f, out=defaultOut);
+
+    Not16(in=defaultOut, out=notOut);
+    Mux16(a=defaultOut, b=notOut, sel=no, out=outValue);
+    And16(a=outValue, b=true, out=out);
+
+    And16(a=outValue, b=true, out[0..7]=firstHalfOfoutValue, out[8..15]=secondHalfOfoutValue);
+    
+    Or8Way(in=firstHalfOfoutValue, out=isNotZeroFirstHalf);
+    Or8Way(in=secondHalfOfoutValue, out=isNotZeroSecondHalf);
+    Or(a=isNotZeroFirstHalf, b=isNotZeroSecondHalf, out=isNotZero);
+    Not(in=isNotZero, out=zr);
+
+    And16(a=outValue, b=true, out[0..14]=drop, out[15]=ng);
 }

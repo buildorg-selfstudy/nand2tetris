@@ -15,4 +15,53 @@ CHIP Mux16 {
 
     PARTS:
     // Put your code here:
+    Not(in=sel, out=notSel);
+    And(a=a[0], b=notSel, out=midAZero);
+    And(a=b[0], b=sel, out=midBZero);
+    Or(a=midAZero, b=midBZero, out=out[0]);
+    And(a=a[1], b=notSel, out=midAOne);
+    And(a=b[1], b=sel, out=midBOne);
+    Or(a=midAOne, b=midBOne, out=out[1]);
+    And(a=a[2], b=notSel, out=midATwo);
+    And(a=b[2], b=sel, out=midBTwo);
+    Or(a=midATwo, b=midBTwo, out=out[2]);
+    And(a=a[3], b=notSel, out=midAThree);
+    And(a=b[3], b=sel, out=midBThree);
+    Or(a=midAThree, b=midBThree, out=out[3]);
+    And(a=a[4], b=notSel, out=midAFour);
+    And(a=b[4], b=sel, out=midBFour);
+    Or(a=midAFour, b=midBFour, out=out[4]);
+    And(a=a[5], b=notSel, out=midAFive);
+    And(a=b[5], b=sel, out=midBFive);
+    Or(a=midAFive, b=midBFive, out=out[5]);
+    And(a=a[6], b=notSel, out=midASix);
+    And(a=b[6], b=sel, out=midBSix);
+    Or(a=midASix, b=midBSix, out=out[6]);
+    And(a=a[7], b=notSel, out=midASeven);
+    And(a=b[7], b=sel, out=midBSeven);
+    Or(a=midASeven, b=midBSeven, out=out[7]);
+    And(a=a[8], b=notSel, out=midAEight);
+    And(a=b[8], b=sel, out=midBEight);
+    Or(a=midAEight, b=midBEight, out=out[8]);
+    And(a=a[9], b=notSel, out=midANine);
+    And(a=b[9], b=sel, out=midBNine);
+    Or(a=midANine, b=midBNine, out=out[9]);
+    And(a=a[10], b=notSel, out=midATen);
+    And(a=b[10], b=sel, out=midBTen);
+    Or(a=midATen, b=midBTen, out=out[10]);
+    And(a=a[11], b=notSel, out=midAEleven);
+    And(a=b[11], b=sel, out=midBEleven);
+    Or(a=midAEleven, b=midBEleven, out=out[11]);
+    And(a=a[12], b=notSel, out=midATwelve);
+    And(a=b[12], b=sel, out=midBTwelve);
+    Or(a=midATwelve, b=midBTwelve, out=out[12]);
+    And(a=a[13], b=notSel, out=midAThirteen);
+    And(a=b[13], b=sel, out=midBThirteen);
+    Or(a=midAThirteen, b=midBThirteen, out=out[13]);
+    And(a=a[14], b=notSel, out=midAFourteen);
+    And(a=b[14], b=sel, out=midBFourteen);
+    Or(a=midAFourteen, b=midBFourteen, out=out[14]);
+    And(a=a[15], b=notSel, out=midAFifteen);
+    And(a=b[15], b=sel, out=midBFifteen);
+    Or(a=midAFifteen, b=midBFifteen, out=out[15]);
 }

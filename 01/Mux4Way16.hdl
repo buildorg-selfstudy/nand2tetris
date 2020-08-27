@@ -17,4 +17,140 @@ CHIP Mux4Way16 {
 
     PARTS:
     // Put your code here:
+    Not(in=sel[0], out=notSelZero);
+    Not(in=sel[1], out=notSelOne);
+    
+    And(a=notSelZero, b=notSelOne, out=selA);
+    And(a=sel[0], b=notSelOne, out=selB);
+    And(a=notSelZero, b=sel[1], out=selC);
+    And(a=sel[0], b=sel[1], out=selD);
+    
+    And(a=a[0], b=selA, out=valAZero);
+    And(a=b[0], b=selB, out=valBZero);
+    And(a=c[0], b=selC, out=valCZero);
+    And(a=d[0], b=selD, out=valDZero);
+
+    Or(a=valAZero, b=valBZero, out=valABZero);
+    Or(a=valCZero, b=valDZero, out=valCDZero);
+    Or(a=valABZero, b=valCDZero, out=out[0]);
+    And(a=a[1], b=selA, out=valAOne);
+    And(a=b[1], b=selB, out=valBOne);
+    And(a=c[1], b=selC, out=valCOne);
+    And(a=d[1], b=selD, out=valDOne);
+
+    Or(a=valAOne, b=valBOne, out=valABOne);
+    Or(a=valCOne, b=valDOne, out=valCDOne);
+    Or(a=valABOne, b=valCDOne, out=out[1]);
+    And(a=a[2], b=selA, out=valATwo);
+    And(a=b[2], b=selB, out=valBTwo);
+    And(a=c[2], b=selC, out=valCTwo);
+    And(a=d[2], b=selD, out=valDTwo);
+
+    Or(a=valATwo, b=valBTwo, out=valABTwo);
+    Or(a=valCTwo, b=valDTwo, out=valCDTwo);
+    Or(a=valABTwo, b=valCDTwo, out=out[2]);
+    And(a=a[3], b=selA, out=valAThree);
+    And(a=b[3], b=selB, out=valBThree);
+    And(a=c[3], b=selC, out=valCThree);
+    And(a=d[3], b=selD, out=valDThree);
+
+    Or(a=valAThree, b=valBThree, out=valABThree);
+    Or(a=valCThree, b=valDThree, out=valCDThree);
+    Or(a=valABThree, b=valCDThree, out=out[3]);
+    And(a=a[4], b=selA, out=valAFour);
+    And(a=b[4], b=selB, out=valBFour);
+    And(a=c[4], b=selC, out=valCFour);
+    And(a=d[4], b=selD, out=valDFour);
+
+    Or(a=valAFour, b=valBFour, out=valABFour);
+    Or(a=valCFour, b=valDFour, out=valCDFour);
+    Or(a=valABFour, b=valCDFour, out=out[4]);
+    And(a=a[5], b=selA, out=valAFive);
+    And(a=b[5], b=selB, out=valBFive);
+    And(a=c[5], b=selC, out=valCFive);
+    And(a=d[5], b=selD, out=valDFive);
+
+    Or(a=valAFive, b=valBFive, out=valABFive);
+    Or(a=valCFive, b=valDFive, out=valCDFive);
+    Or(a=valABFive, b=valCDFive, out=out[5]);
+    And(a=a[6], b=selA, out=valASix);
+    And(a=b[6], b=selB, out=valBSix);
+    And(a=c[6], b=selC, out=valCSix);
+    And(a=d[6], b=selD, out=valDSix);
+
+    Or(a=valASix, b=valBSix, out=valABSix);
+    Or(a=valCSix, b=valDSix, out=valCDSix);
+    Or(a=valABSix, b=valCDSix, out=out[6]);
+    And(a=a[7], b=selA, out=valASeven);
+    And(a=b[7], b=selB, out=valBSeven);
+    And(a=c[7], b=selC, out=valCSeven);
+    And(a=d[7], b=selD, out=valDSeven);
+
+    Or(a=valASeven, b=valBSeven, out=valABSeven);
+    Or(a=valCSeven, b=valDSeven, out=valCDSeven);
+    Or(a=valABSeven, b=valCDSeven, out=out[7]);
+    And(a=a[8], b=selA, out=valAEight);
+    And(a=b[8], b=selB, out=valBEight);
+    And(a=c[8], b=selC, out=valCEight);
+    And(a=d[8], b=selD, out=valDEight);
+
+    Or(a=valAEight, b=valBEight, out=valABEight);
+    Or(a=valCEight, b=valDEight, out=valCDEight);
+    Or(a=valABEight, b=valCDEight, out=out[8]);
+    And(a=a[9], b=selA, out=valANine);
+    And(a=b[9], b=selB, out=valBNine);
+    And(a=c[9], b=selC, out=valCNine);
+    And(a=d[9], b=selD, out=valDNine);
+
+    Or(a=valANine, b=valBNine, out=valABNine);
+    Or(a=valCNine, b=valDNine, out=valCDNine);
+    Or(a=valABNine, b=valCDNine, out=out[9]);
+    And(a=a[10], b=selA, out=valATen);
+    And(a=b[10], b=selB, out=valBTen);
+    And(a=c[10], b=selC, out=valCTen);
+    And(a=d[10], b=selD, out=valDTen);
+
+    Or(a=valATen, b=valBTen, out=valABTen);
+    Or(a=valCTen, b=valDTen, out=valCDTen);
+    Or(a=valABTen, b=valCDTen, out=out[10]);
+    And(a=a[11], b=selA, out=valAEleven);
+    And(a=b[11], b=selB, out=valBEleven);
+    And(a=c[11], b=selC, out=valCEleven);
+    And(a=d[11], b=selD, out=valDEleven);
+
+    Or(a=valAEleven, b=valBEleven, out=valABEleven);
+    Or(a=valCEleven, b=valDEleven, out=valCDEleven);
+    Or(a=valABEleven, b=valCDEleven, out=out[11]);
+    And(a=a[12], b=selA, out=valATwelve);
+    And(a=b[12], b=selB, out=valBTwelve);
+    And(a=c[12], b=selC, out=valCTwelve);
+    And(a=d[12], b=selD, out=valDTwelve);
+
+    Or(a=valATwelve, b=valBTwelve, out=valABTwelve);
+    Or(a=valCTwelve, b=valDTwelve, out=valCDTwelve);
+    Or(a=valABTwelve, b=valCDTwelve, out=out[12]);
+    And(a=a[13], b=selA, out=valAThirteen);
+    And(a=b[13], b=selB, out=valBThirteen);
+    And(a=c[13], b=selC, out=valCThirteen);
+    And(a=d[13], b=selD, out=valDThirteen);
+
+    Or(a=valAThirteen, b=valBThirteen, out=valABThirteen);
+    Or(a=valCThirteen, b=valDThirteen, out=valCDThirteen);
+    Or(a=valABThirteen, b=valCDThirteen, out=out[13]);
+    And(a=a[14], b=selA, out=valAFourteen);
+    And(a=b[14], b=selB, out=valBFourteen);
+    And(a=c[14], b=selC, out=valCFourteen);
+    And(a=d[14], b=selD, out=valDFourteen);
+
+    Or(a=valAFourteen, b=valBFourteen, out=valABFourteen);
+    Or(a=valCFourteen, b=valDFourteen, out=valCDFourteen);
+    Or(a=valABFourteen, b=valCDFourteen, out=out[14]);
+    And(a=a[15], b=selA, out=valAFifteen);
+    And(a=b[15], b=selB, out=valBFifteen);
+    And(a=c[15], b=selC, out=valCFifteen);
+    And(a=d[15], b=selD, out=valDFifteen);
+
+    Or(a=valAFifteen, b=valBFifteen, out=valABFifteen);
+    Or(a=valCFifteen, b=valDFifteen, out=valCDFifteen);
+    Or(a=valABFifteen, b=valCDFifteen, out=out[15]);
 }

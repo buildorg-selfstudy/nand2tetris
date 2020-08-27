@@ -14,4 +14,52 @@ CHIP Or16 {
 
     PARTS:
     // Put your code here:
+    Not(in=a[0], out=notAZero);
+    Not(in=b[0], out=notBZero);
+    Nand(a=notAZero, b=notBZero, out=out[0]);
+    Not(in=a[1], out=notAOne);
+    Not(in=b[1], out=notBOne);
+    Nand(a=notAOne, b=notBOne, out=out[1]);
+    Not(in=a[2], out=notATwo);
+    Not(in=b[2], out=notBTwo);
+    Nand(a=notATwo, b=notBTwo, out=out[2]);
+    Not(in=a[3], out=notAThree);
+    Not(in=b[3], out=notBThree);
+    Nand(a=notAThree, b=notBThree, out=out[3]);
+    Not(in=a[4], out=notAFour);
+    Not(in=b[4], out=notBFour);
+    Nand(a=notAFour, b=notBFour, out=out[4]);
+    Not(in=a[5], out=notAFive);
+    Not(in=b[5], out=notBFive);
+    Nand(a=notAFive, b=notBFive, out=out[5]);
+    Not(in=a[6], out=notASix);
+    Not(in=b[6], out=notBSix);
+    Nand(a=notASix, b=notBSix, out=out[6]);
+    Not(in=a[7], out=notASeven);
+    Not(in=b[7], out=notBSeven);
+    Nand(a=notASeven, b=notBSeven, out=out[7]);
+    Not(in=a[8], out=notAEight);
+    Not(in=b[8], out=notBEight);
+    Nand(a=notAEight, b=notBEight, out=out[8]);
+    Not(in=a[9], out=notANine);
+    Not(in=b[9], out=notBNine);
+    Nand(a=notANine, b=notBNine, out=out[9]);
+    Not(in=a[10], out=notATen);
+    Not(in=b[10], out=notBTen);
+    Nand(a=notATen, b=notBTen, out=out[10]);
+    Not(in=a[11], out=notAEleven);
+    Not(in=b[11], out=notBEleven);
+    Nand(a=notAEleven, b=notBEleven, out=out[11]);
+    Not(in=a[12], out=notATwelve);
+    Not(in=b[12], out=notBTwelve);
+    Nand(a=notATwelve, b=notBTwelve, out=out[12]);
+    Not(in=a[13], out=notAThirteen);
+    Not(in=b[13], out=notBThirteen);
+    Nand(a=notAThirteen, b=notBThirteen, out=out[13]);
+    Not(in=a[14], out=notAFourteen);
+    Not(in=b[14], out=notBFourteen);
+    Nand(a=notAFourteen, b=notBFourteen, out=out[14]);
+    Not(in=a[15], out=notAFifteen);
+    Not(in=b[15], out=notBFifteen);
+    Nand(a=notAFifteen, b=notBFifteen, out=out[15]);
 }
